@@ -121,7 +121,7 @@ const setPostViewed = (postId: number): void => {
   const item = nodes.posts.querySelector(`li[data-post-id="${postId}"]`);
   const link = item.querySelector('a');
   link.classList.remove('fw-bold');
-  link.classList.add('fw-normal', 'text-secondary');
+  link.classList.add('fw-normal', 'text-body-secondary');
 };
 
 
@@ -191,7 +191,7 @@ const render = (state: stateType, path: statePathEnum, translate: translationFun
     case statePathEnum.status:
       renderByStatus(state, translate);
       break;
-    case `${statePathEnum.posts}.0`:
+    case `${statePathEnum.posts}`:
       renderPosts([...state.posts], [...state.postsViewed.all], translate);
       break;
     case statePathEnum.viewedCurrent:
